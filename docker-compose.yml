@@ -5,7 +5,7 @@ services:
     ports:
       - 4005:8080
 
-  show-service:
+  order-service:
     build: .
     working_dir: /usr/app
     depends_on:
