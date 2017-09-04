@@ -45,21 +45,21 @@ async function initDb() {
     const Card1 = await Card({
         number: "1234-4312-5678-5678",
         cvc: 123,
-        expiration: new date(1, 12, 18),
+        expiration: new Date(1, 12, 18),
         ownerId: Nati.id
     }).save();
 
     const Card2 = await Card({
         number: "1234-4457-5678-4568",
         cvc: 123,
-        expiration: new date(1, 4, 18),
+        expiration: new Date(1, 4, 18),
         ownerId: Idan.id
     }).save();
 
     const Card3 = await Card({
         number: "1213-4232-5128-1238",
         cvc: 123,
-        expiration: new date(1, 12, 18),
+        expiration: new Date(1, 12, 18),
         ownerId: Adi.id
     }).save();
 
@@ -71,28 +71,28 @@ async function initDb() {
         tickets: 2,
         showId: Show1,
         customerId: Nati.id,
-        cardId: card1.id
+        cardNumber: Card1.number
     }).save();
 
     const Order2 = await Order({
         tickets: 5,
         showId: Show1,
         customerId: Idan.id,
-        cardId: card2.id
+        cardNumber: Card2.number
     }).save();
 
     const Order3 = await Order({
         tickets: 4,
         showId: Show2,
         customerId: Nati.id,
-        cardId: card1.id
+        cardNumber: Card1.number
     }).save();
 
     const Order4 = await Order({
         tickets: 2,
         showId: Show3,
         customerId: Adi.id,
-        cardId: card3.id
+        cardNumber: Card3.number
     }).save();
 }
 
