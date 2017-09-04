@@ -25,7 +25,7 @@ OrderController.get("/", async (req, res) => {
 OrderController.post("/", async (req, res) => {
     try {
         let order = new Order(req.body);
-        let show = await ShowService.updateShowSalesById(order.showId, order.tickets);
+        let show = await ShowService.updateShowSalesById(order.showId, -order.tickets);
         let created = await order.saveAll();
         created.show = show;
         res.send(created);
@@ -50,6 +50,7 @@ OrderController.get("/:orderId", async (req, res) => {
 OrderController.delete("/:orderId", async (req, res) => {
     try {
         let deleted = Order.get(req.params.orderId).delete().run();
+        let show = await ShowService.updateShowSalesById(order.showId, order.tickets);
         res.send(deleted);
     } catch (e) {
         res.status(500).send({message: e.toString()});
