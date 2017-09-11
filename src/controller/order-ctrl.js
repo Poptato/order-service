@@ -49,7 +49,7 @@ OrderController.get("/:orderId", async (req, res) => {
 
 OrderController.delete("/:orderId", async (req, res) => {
     try {
-        let deleted = Order.get(req.params.orderId).delete().run();
+        let deleted = await Order.get(req.params.orderId).delete().run();
         let show = await ShowService.updateShowSalesById(order.showId, order.tickets);
         res.send(deleted);
     } catch (e) {
@@ -59,8 +59,8 @@ OrderController.delete("/:orderId", async (req, res) => {
 
 OrderController.get("/:orderId/receipt", async (req, res) => {
     try {
-        let order = Order.get(req.params.orderId).getJoin({customer: true}).run();
-        let show = ShowService.getShowById(order.showId, true);
+        let order = await Order.get(req.params.orderId).getJoin({customer: true}).run();
+        let show = await ShowService.getShowById(order.showId, true);
         order.show = show;
         res.send(order);
     } catch (e) {
