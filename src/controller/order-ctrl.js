@@ -64,7 +64,7 @@ OrderController.get("/:orderId/receipt", async (req, res) => {
         order.show = show;
         res.send(order);
     } catch (e) {
-        res.status(500).send()
+        res.status(500).send({message: e.toString()})
     }
 });
 
