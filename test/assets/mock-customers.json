@@ -1,0 +1,23 @@
+[
+  {
+    "id": "313247512",
+    "firstName": "Nati",
+    "lastName": "Oren",
+    "gender": "male",
+    "birthday": "1995-03-03T22:00:00.000Z"
+  },
+  {
+    "id": "313292781",
+    "firstName": "Idan",
+    "lastName": "Ashraf",
+    "gender": "male",
+    "birthday": "1995-03-11T22:00:00.000Z"
+  },
+  {
+    "id": "312336534",
+    "firstName": "Adi",
+    "lastName": "Oren",
+    "gender": "female",
+    "birthday": "1995-04-20T21:00:00.000Z"
+  }
+]
