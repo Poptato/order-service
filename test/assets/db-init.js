@@ -36,12 +36,12 @@ class DbInitializer {
         let mockOrders = require("./mock-orders.json");
         return await Promise.all(mockOrders.map(o => Order(o).save()));
     }
-}
 
-module.exports.go = async function() {
-    const initializer = new DbInitializer();
-    await initializer.init();
-    process.exit();
-};
+    static async go() {
+       const initializer = new DbInitializer();
+       await initializer.init();
+       process.exit();
+   };
+}
 
 module.exports.default = DbInitializer;
